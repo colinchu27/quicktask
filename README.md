@@ -2,7 +2,7 @@
 
 QuickTask is a simple command-line to-do list app created as a beginner-friendly tutorial project to teach the basics of Git, version control, and collaborative development. 
 
-This project was designed for an educational workshop hosted by our student tech club, where new programmers learned how to:
+This project was designed for an educational video to teach new programmers how to:
 - Set up and clone a GitHub repo
 - Make commits
 - Understand branches and merges
