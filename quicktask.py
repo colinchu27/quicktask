@@ -1,5 +1,6 @@
 tasks = []
 
+
 def show_menu():
     print("\nQuickTask Menu:")
     print("1. Add Task")
@@ -8,11 +9,13 @@ def show_menu():
     print("4. Delete Task")
     print("5. Exit")
 
+
 def add_task():
     title = input("Enter task name: ")
     priority = input("Priority (1=High, 2=Medium, 3=Low): ")
     tasks.append({"title": title, "priority": int(priority), "done": False})
     print(f"Task '{title}' added.")
+
 
 def view_tasks():
     if not tasks:
@@ -21,8 +24,10 @@ def view_tasks():
     sorted_tasks = sorted(tasks, key=lambda x: (x["done"], x["priority"]))
     for idx, task in enumerate(sorted_tasks):
         status = "✓" if task["done"] else " "
-        prio = {1: "High", 2: "Medium", 3: "Low"}.get(task["priority"], "Unknown")
+        prio = {1: "High", 2: "Medium", 3: "Low"}.get(
+            task["priority"], "Unknown")
         print(f"{idx+1}. [{status}] {task['title']} (Priority: {prio})")
+
 
 def mark_done():
     view_tasks()
@@ -33,6 +38,7 @@ def mark_done():
     else:
         print("Invalid task number.")
 
+
 def delete_task():
     view_tasks()
     idx = int(input("Enter task number to delete: ")) - 1
@@ -41,6 +47,7 @@ def delete_task():
         print(f"Deleted task: {removed['title']}")
     else:
         print("Invalid task number.")
+
 
 def main():
     while True:
@@ -59,6 +66,7 @@ def main():
             break
         else:
             print("Invalid option.")
+
 
 if __name__ == "__main__":
     main()
